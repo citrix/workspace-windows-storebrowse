@@ -1,0 +1,13 @@
+site_name: Storebrowse for Citrix Receiver for Windows
+site_description: Commmand-line reference for Storebrowse for Citrix Receiver for Windows
+theme_dir: citrix-sdk
+repo_url:
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      anchorlink: True
+
+pages:
+- Home: index.md
+
