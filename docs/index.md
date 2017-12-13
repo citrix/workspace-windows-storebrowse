@@ -30,7 +30,6 @@ Refer to the following table for information about the options that you can use 
 
 ## Limitations
 
-1. The –f (launching file or folder) and –L (launching published apps and desktops) commands are not functional with this version of Storebrowse utility. 
 1. The username and password are case-sensitive and must be in upper case only.
 
 
