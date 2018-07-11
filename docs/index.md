@@ -1,6 +1,6 @@
 # Storebrowse for Receiver for Windows
 
-Storebrowse is a command-line utility tool available with Receiver for Windows that you can use to customize Receiver by scripting the storebrowse utility. This version of Storebrowse utility is supported on Receiver for Windows Version 4.4 CU5, 4.7, 4.9, 4.9 CU1 and 4.10.
+Storebrowse is a command-line utility tool available with Receiver for Windows that you can use to customize Receiver by scripting the storebrowse utility. This version of Storebrowse (v1.0.1.44) utility is supported on Receiver for Windows Version 4.4 CU5, 4.7, 4.9, 4.9 CU1, 4.10, 4.10.1, 4.11 and 4.12.
 
 Using Storebrowse utility, you can:
 
@@ -33,9 +33,4 @@ Refer to the following table for information about the options that you can use 
 
 ## Limitations
 
-1. The username and password are case-sensitive and must be in upper case only.
-
-
-
-
-
+- The command line options Username (`-U`), Password(`-P`) and Domain(`-D`) of the Storebrowse utility are case-sensitive and must be in upper case only.

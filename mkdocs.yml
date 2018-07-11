@@ -1,6 +1,8 @@
 site_name: Storebrowse for Citrix Receiver for Windows
 site_description: Commmand-line reference for Storebrowse for Citrix Receiver for Windows
-theme_dir: citrix-sdk
+theme_dir: material
+extra_css:
+  - 'assets/stylesheets/extra.css'
 repo_url:
 markdown_extensions:
   - admonition
