@@ -67,17 +67,37 @@ Citrix Workspace app Version 18.8 requires a minimum of 530MB of free disk space
 
 Storebrowse utility is compatible with the following Operating systems:
 
-| Operating system |
-|------------------|
-| Windows 10 32-bit and 64-bit editions |
-| Windows 8.1, 32-bit and 64-bit editions |
-| Windows 7 SP1, 32-bit and 64-bit editions |
-| Windows Thin PC |
-| Windows Server 2016 |
-| Windows Server 2012 R2, Standard, and, Datacenter editions |
-| Windows Server 2012, Standard, and, Datacenter editions |
-| Windows Server 2008 R2, 64-bit edition |
-| Windows 10 Enterprise 2016 LTSB 1607 |
+<table style="width:60%">
+  <tr>
+    <th>Operating System</th>
+  </tr>
+  <tr>
+    <td> Windows 10 32-bit and 64-bit editions </td>
+    </tr>
+    <tr>
+    <td> Windows 8.1, 32-bit and 64-bit editions </td>
+    </tr>
+    <tr>
+    <td> Windows 7 SP1, 32-bit and 64-bit editions </td>
+    </tr>
+    <td>Windows Thin PC </td>
+    </tr>
+    <tr>
+    <td>Windows Server 2016 </td>
+    </tr>
+    <tr>
+    <td> Windows Server 2012 R2, Standard, and, Datacenter editions </td>
+    </tr>
+    <tr>
+    <td>Windows Server 2012, Standard, and, Datacenter editions</td>
+    </tr>
+    <tr>
+    <td>Windows Server 2008 R2, 64-bit edition</td>
+    </tr>
+    <tr>
+    <td>Windows 10 Enterprise 2016 LTSB 1607</td>
+    </tr>
+</table>
 
 ## Connections
 
