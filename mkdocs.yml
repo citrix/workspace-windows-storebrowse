@@ -12,4 +12,7 @@ markdown_extensions:
 
 pages:
 - Home: index.md
+- Storebrowse Command Usage: command-usage.md
+- Single Sign-on Support of NetScaler Gateway: single-sign-on-support.md
+- Known Limitations: known-limitations.md
 
