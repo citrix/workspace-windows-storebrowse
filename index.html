@@ -262,19 +262,48 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#storebrowse-command-usage" title="Storebrowse command usage" class="md-nav__link">
-    Storebrowse command usage
-  </a>
-  
-</li>
-      
       
       
     </ul>
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="command-usage/" title="Storebrowse Command Usage" class="md-nav__link">
+      Storebrowse Command Usage
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="single-sign-on-support/" title="Single Sign-on Support of NetScaler Gateway" class="md-nav__link">
+      Single Sign-on Support of NetScaler Gateway
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="known-limitations/" title="Known Limitations" class="md-nav__link">
+      Known Limitations
+    </a>
   </li>
 
     
@@ -387,13 +416,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#storebrowse-command-usage" title="Storebrowse command usage" class="md-nav__link">
-    Storebrowse command usage
-  </a>
-  
-</li>
-      
       
       
     </ul>
@@ -490,261 +512,6 @@ Citrix Workspace app Version 18.8 requires a minimum of 530MB of free disk space
 Note: You must enable HTTP Basic authentication method on the StoreFront while working with Storebrowse utility. This would mean, when user provides credentials along with the StoreBrowse commands.</li>
 <li>External Authmanager which comes along with Citrix Workspace app is invoked which prompts to user to enter the credentials.</li>
 </ul>
-<h2 id="storebrowse-command-usage"><a class="toclink" href="#storebrowse-command-usage">Storebrowse command usage</a></h2>
-<p>Extract the Storebrowse.zip file downloaded from the Citrix downloads website to the desired location. The folder also contains dependent DLLs that are used along with Storebrowse.</p>
-<p>Refer to the following table for information about the options that you can use from Storebrowse.</p>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-<th>Command Example on StoreFront &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-<th>Command Example on NetScaler Gateway &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-a</code>, <code>--addstore</code></td>
-<td>Adds new store. Returns the full URL of the store. If this fails, an error is reported. <br> <strong>Note</strong>: You can add multiple stores using the Storebrowse utility.</td>
-<td><code>storebrowse.exe –U &lt;username&gt; -P &lt;password&gt; -D &lt;domain&gt; -a &lt;URL of Storefront&gt;</code> <br><br> <code>.\storebrowse.exe –U {Username} –P {Password} –D {Domain} –a https://my.firstexamplestore.net</code></td>
-<td><code>storebrowse.exe –U &lt;username&gt; -P &lt;password&gt; -D &lt;domain&gt; -a &lt;URL of NetScalerGateway&gt;</code> <br><br> <code>.\storebrowse.exe –U {Username} –P {Password} –D {Domain} –a &lt;https://mysecondexample.com&gt;</code></td>
-</tr>
-<tr>
-<td><code>/?</code></td>
-<td>Provides details on Storebrowse usage</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>(-l)</code>, <code>--liststore</code></td>
-<td>Lists the stores that are added by the user.</td>
-<td><code>.\storebrowse.exe –l</code></td>
-<td><code>.\storebrowse.exe  –l</code></td>
-</tr>
-<tr>
-<td><code>(-M 0x2000 -E)</code></td>
-<td>Enumerates the available resources</td>
-<td><code>.\storebrowse.exe –U {Username} –P {Password} –D {Domain} –M 0x2000 –E &lt;https://my.firstexamplestore.net/Citrix/Store/discovery&gt;</code></td>
-<td><code>.\storebrowse.exe –U {Username} –P {Password} –D {Domain} –M 0x2000 –E &lt;https://my.secondexample.net&gt;</code></td>
-</tr>
-<tr>
-<td><code>-q</code>, <code>--quicklaunch</code></td>
-<td>Generates the required ICA file for published apps and desktops using the Storebrowse utility. <br><br> The quicklaunch option requires a launch URL as an input along with the Store URL, which can either be the StoreFront server or NetScaler Gateway URL. The ICA file is generated in the <code>“%LocalAppData%\Citrix\Storebrowse\cache”</code> directory. <br><br>You can get the launch URL for any published apps and desktops by executing the following command: <br><br> <code>.\storebrowse –M 0X2000 –E https://myfirstexamplestore.net/Citrix/Second/discovery</code> <br><br> A typical launch URL looks like below: <code>'Controller.Calculator'  'Calculator'    '\' ''  http://abc-sf.xyz.com/Citrix/Stress/resources/v2/Q29udHJvbGxlci5DYWxjdWxhdG9y/launch/ica</code></td>
-<td><code>.\storebrowse.exe  –U {Username} –P {Password}–D {Domain} –q {Launch_URL_of_published_ apps and desktops }&lt;https://my.firstexamplestore.net/Citrix/Store/resources/v2/Q2hJkOlmNoPQrSTV9y/launch/ica&gt; &lt;https://my.firstexamplestore.net/Citrix/Store/discovery&gt;</code></td>
-<td><code>.\storebrowse.exe  –U {Username} –P {Password} –D {Domain} –q {Launch_URL_of_published_ apps and desktops} &lt;https://my.secondexmaplestore.com&gt;</code></td>
-</tr>
-<tr>
-<td><code>-L</code>, <code>--launch</code></td>
-<td>Generates the required ICA file for published apps and desktops using the Storebrowse utility.  <br><br> The launch option requires the name of the resource along with the Store URL, which can either be the StoreFront server or NetScaler Gateway URL.  <br><br> The ICA file is generated in the <code>“%LocalAppData%\Citrix\Storebrowse\cache”</code> directory. <br><br>You can get the display name of the published apps and desktops by executing the command below: <br><br> <code>.\storebrowse –M 0X2000 –E https://myfirstexamplestore.net/Citrix/Second/discovery</code> results in the following output: <br><br> <code>'Controller.Calculator'  'Calculator'    '\' ''  http://abc-sf.xyz.com/Citrix/Stress/resources/v2/Q29udHJvbGxlci5DYWxjdWxhdG9y/launch/ica</code><br><br>The name that is in <strong>bold</strong> in the above output is used as input parameter to the launch option.</td>
-<td><code>.\storebrowse.exe  -U {Username} –P {Password} –D {Domain} –L “{Resource_Name} &lt;https://my.firstexamplestore.net/Citrix/Store/discovery&gt;</code></td>
-<td><code>&lt;.\storebrowse.exe  –U {Username} –P {Password} –D {Domain} –L {Resource_Name} https://my.secondexamplestore.com&gt;</code></td>
-</tr>
-<tr>
-<td><code>-S</code>, <code>--launch</code></td>
-<td>You can add the store, enumerate the published resources (apps and desktops) and launch the resource with the single command. This option takes the following as parameters -  Username, Password, Domain, Friendly name of the resource to be launched and the store URL. However, if the user does not provide the credentials , AuthManager prompt is thrown to enter the credentials and then the resource launch will happen. <br><br> You can get the name of the resource of published apps and desktops by executing the command below: <br><br> <code>.\storebrowse –M 0X2000 –E https://myfirstexamplestore.net/Citrix/Second/discovery</code> results in the following output: <br><br> <code>'Controller.Calculator'  'Calculator'    '\' ''  http://abc-sf.xyz.com/Citrix/Stress/resources/v2/Q29udHJvbGxlci5DYWxjdWxhdG9y/launch/ica</code> <br><br> The name that is in <strong>bold</strong> in the above output will be used as input parameter to the “-S” option.</td>
-<td><code>.\storebrowse.exe  -U {Username} –P {Password} –D {Domain} –S “{Friendly_Resource_Name} &lt;https://my.firstexamplestore.net/Citrix/Store/discovery &gt;</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>.\storebrowse.exe  –U {Username} –P {Password} –D {Domain} –S {Friendly_Resource_Name} &lt;https://my.secondexamplestore.com&gt;</code></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>-f</code>, <code>--filefolder</code></td>
-<td>Generates the required ICA file in the custom path as defined in the <code>–f</code> option for any of the published apps and desktops using the Storebrowse utility. <br><br>The launch option requires a folder name along with name of the resource as the input with Store URL, which is either StoreFront server or NetScaler Gateway URL.</td>
-<td><code>.\storebrowse.exe  –f “C:\Temp\Launch.ica” –L “Resource_Name” {Store}</code></td>
-<td><code>.\storebrowse.exe  –f “C:\Temp\Launch.ica” –L “Resource_Name” {NSG_URL}</code></td>
-</tr>
-<tr>
-<td><code>-t</code>, <code>--traceauthentication</code></td>
-<td>Generate logs for Storebrowse in-built AuthManager component. Logs are generated only if Storebrowse is using an in-built AuthManager. Logs are generated in the <code>%localappdata%\Citrix\Storebrowse\logs</code> directory.<br><br>Note: This option cannot be the last parameter for user’s command line.</td>
-<td><code>.\storebrowse.exe –t –U {UserName} –P {Password} –D {Domain} –a {StoreURL}</code></td>
-<td><code>.\storebrowse.exe –t –U {UserName} –P {Password} –D {Domain} –a {NSG_URL}</code></td>
-</tr>
-<tr>
-<td><code>-d</code>, <code>--deletestore</code></td>
-<td>Deletes existing StoreFront or NetScaler Gateway store.</td>
-<td><code>.\storebrowse.exe –d https://my.firstexamplestore.net/Citrix/Store/discovery</code></td>
-<td><code>.\storebrowse.exe –d https://my.secondexmaplestore.com</code></td>
-</tr>
-</tbody>
-</table>
-<h1 id="storebrowse-single-sign-on-support-of-netscaler-gateway"><a class="toclink" href="#storebrowse-single-sign-on-support-of-netscaler-gateway">StoreBrowse Single Sign-on Support of NetScaler Gateway</a></h1>
-<p>Single Sign-on lets you authenticate to a domain and use apps and desktops delivered by that domain without having to re-authenticate to each app or desktop. When you add a store using the StoreBrowse utility, your credentials are passed through to NetScaler Gateway server, along with the apps and desktops enumerated for you, including your Start menu settings. After configuring Single Sign-on, you can add the store, Enumerate the Apps/Desktops, Launch the required resource without having to type your credentials multiple times.</p>
-<h2 id="pre-requisites-for-single-sign-on-for-netscaler-gateway-server"><a class="toclink" href="#pre-requisites-for-single-sign-on-for-netscaler-gateway-server">Pre-requisites for Single Sign-On for NetScaler Gateway Server</a></h2>
-<p>For the pre-requisites on how to configure Single Sign-On for NetScaler Gateway, please refer the <a href="https://docs.citrix.com/en-us/receiver/windows/current-release/authentication/config-pass-through.html">link</a>. </p>
-<p>The Single Sign-On feature with NetScaler Gateway can be enabled through Group Policy. Below is the step to enable the Single Sign-On for NetScaler Gateway URL:</p>
-<p><strong>Note</strong>: When you upgrade from Citrix Receiver to Citrix Workspace App or fresh install Citrix workspace for the first time, you must add the latest template files to the local GPO. For more information on adding template files to the local GPO, see <a href="https://docs.citrix.com/en-us/receiver/windows/current-release/configure/config-gpo-template.html">https://docs.citrix.com/en-us/receiver/windows/current-release/configure/config-gpo-template.html</a>. In case of an upgrade, the existing settings are retained when the latest files are imported. </p>
-<ol>
-<li>Open the Citrix Receiver GPO administrative template by running <code>gpedit.msc</code></li>
-<li>Under the Computer Configuration node, go to <strong>Administrative Template</strong> &gt; <strong>Citrix Component</strong> &gt; <strong>Citrix Workspace</strong> &gt; <strong>User Authentication</strong> &gt; <strong>Single Sign-on for NetScaler Gateway</strong></li>
-<li>Use the toggle options to Enable/Disable the single sign-on option
-    <img alt="Single Sign-on for NetScaler Gateway Server" src="./sso.png" /></li>
-</ol>
-<h2 id="known-limitations-with-current-storebrowse-utility"><a class="toclink" href="#known-limitations-with-current-storebrowse-utility">Known Limitations with Current StoreBrowse Utility</a></h2>
-<ul>
-<li>HTTP Basic Authentication method has to be enabled on the StoreFront server for credential injection operations that you do with StoreBrowse utility.</li>
-<li>If you have HTTP store, and when you try connecting to the store using the utility for enumerating Apps/Desktops or Launch the published Apps/Desktops, then the credential injection via command line option is unsupported. As a workaround, you can use the external AuthManager module which gets triggered when you do not provide credential via command line</li>
-<li>StoreBrowse currently support NetScaler Gateway configured with only single store configured on the StoreFront server.</li>
-<li>Credential Injection in StoreBrowse will work only if NetScaler Gateway is configured with Single Factor Authentication.</li>
-<li>The command line options Username (<code>-U</code>), Password (<code>-P</code>) and Domain (<code>-D</code>) of the Storebrowse utility are case-sensitive and must be in upper case only.</li>
-</ul>
-<table style="width: 1403px;">
-<tbody>
-<tr>
-<td style="width: 107px;">
-<p><strong>Option</strong></p>
-</td>
-<td style="width: 402px;">
-<p><strong>Description</strong></p>
-</td>
-<td style="width: 645px;">
-<p><strong>Command example on StoreFront</strong></p>
-</td>
-<td style="width: 223px;">
-<p><strong>Command example on NetScaler Gateway</strong></p>
-</td>
-</tr>
-<tr>
-<td style="width: 107px;">
-<p>a, --addstore</p>
-</td>
-<td style="width: 402px;">
-<p>Adds new store.<br />Returns the full URL of the store. If this fails, an error is reported.<br /> <br />Note: You can add multiple stores using the Storebrowse utility.</p>
-</td>
-<td style="width: 645px;">
-<p>storebrowse.exe &ndash;U &lt;username&gt; -P &lt;password&gt; -D &lt;domain&gt; -a &lt;URL of Storefront&gt;<br /> <br />.\storebrowse.exe &ndash;U {Username} &ndash;P {Password} &ndash;D {Domain} &ndash;a https://my.firstexamplestore.net</p>
-</td>
-<td style="width: 223px;">
-<p>storebrowse.exe &ndash;U &lt;username&gt; -P &lt;password&gt; -D &lt;domain&gt; -a &lt;URL of NetScalerGateway&gt;<br /> <br />.\storebrowse.exe &ndash;U {Username} &ndash;P {Password} &ndash;D {Domain} &ndash;a &lt;https://mysecondexample.com&gt;</p>
-</td>
-</tr>
-<tr>
-<td style="width: 107px;">
-<p>/?</p>
-</td>
-<td style="width: 402px;">
-<p>Provides details on Storebrowse usage</p>
-</td>
-<td style="width: 645px;">&nbsp;</td>
-<td style="width: 223px;">&nbsp;</td>
-</tr>
-<tr>
-<td style="width: 107px;">
-<p>(-l), --liststore</p>
-</td>
-<td style="width: 402px;">
-<p>Lists the stores that are added by the user.</p>
-</td>
-<td style="width: 645px;">
-<p>.\storebrowse.exe&nbsp; &ndash;l</p>
-</td>
-<td style="width: 223px;">
-<p>.\storebrowse.exe&nbsp; &ndash;l</p>
-</td>
-</tr>
-<tr>
-<td style="width: 107px;">
-<p>(-M 0x2000 -E)</p>
-</td>
-<td style="width: 402px;">
-<p>Enumerates the available resources</p>
-</td>
-<td style="width: 645px;">
-<p>.\storebrowse.exe &ndash;U {Username} &ndash;P {Password} &ndash;D {Domain} &ndash;M 0x2000 &ndash;E &lt; https://my.firstexamplestore.net/Citrix/Store/discovery&gt;</p>
-</td>
-<td style="width: 223px;">
-<p>.\storebrowse.exe &ndash;U {Username} &ndash;P {Password} &ndash;D {Domain} &ndash;M 0x2000 &ndash;E &lt;https://my.secondexample.net&gt;</p>
-</td>
-</tr>
-<tr>
-<td style="width: 107px;">
-<p>-q, --quicklaunch</p>
-</td>
-<td style="width: 402px;">
-<p>Generates the required ICA file for published apps and desktops using the Storebrowse utility. <br /> <br />The quicklaunch option requires a launch URL as an input along with the Store URL, which can either be the StoreFront server or NetScaler Gateway URL. The ICA file is generated in the &ldquo;%LocalAppData%\Citrix\Storebrowse\cache&rdquo; directory.<br /> <br />You can get the launch URL for any published apps and desktops by executing the following command:<br /> <br />.\storebrowse &ndash;M 0X2000 &ndash;E https://myfirstexamplestore.net/Citrix/Second/discovery <br /> <br />A typical launch URL looks like below:<br />'Controller.Calculator'&nbsp; 'Calculator'&nbsp;&nbsp;&nbsp; '\' ''&nbsp; http://abc-sf.xyz.com/Citrix/Stress/resources/v2/Q29udHJvbGxlci5DYWxjdWxhdG9y/launch/ica</p>
-</td>
-<td style="width: 645px;">
-<p>.\storebrowse.exe&nbsp; &ndash;U {Username} &ndash;P {Password} &ndash;D {Domain} &ndash;q {Launch_URL_of_published_ apps and desktops } &lt;https://my.firstexamplestore.net/Citrix/Store/resources/v2/Q2hJkOlmNoPQrSTV9y/launch/ica&gt; &lt;https://my.firstexamplestore.net/Citrix/Store/discovery &gt;</p>
-</td>
-<td style="width: 223px;">
-<p>.\storebrowse.exe&nbsp; &ndash;U {Username} &ndash;P {Password} &ndash;D {Domain} &ndash;q {Launch_URL_of_published_ apps and desktops} &lt;https://my.secondexmaplestore.com&gt;</p>
-</td>
-</tr>
-<tr>
-<td style="width: 107px;">
-<p>-L, --launch</p>
-</td>
-<td style="width: 402px;">
-<p>Generates the required ICA file for published apps and desktops using the Storebrowse utility. &nbsp;&lt;br&gt;&lt;br&gt; The launch option requires the name of the resource along with the Store URL, which can either be the StoreFront server or NetScaler Gateway URL. &nbsp;&lt;br&gt;&lt;br&gt; The ICA file is generated in the `&ldquo;%LocalAppData%\Citrix\Storebrowse\cache&rdquo;` directory. &lt;br&gt;&lt;br&gt;You can get the display name of the published apps and desktops by executing the command below: &lt;br&gt;&lt;br&gt; `.\storebrowse &ndash;M 0X2000 &ndash;E <a href="https://myfirstexamplestore.net/Citrix/Second/discovery%60">https://myfirstexamplestore.net/Citrix/Second/discovery`</a> results in the following output: &lt;br&gt;&lt;br&gt; `<strong>'Controller.Calculator'</strong>&nbsp; 'Calculator'&nbsp;&nbsp;&nbsp; '\' ''&nbsp; http://abc-sf.xyz.com/Citrix/Stress/resources/v2/Q29udHJvbGxlci5DYWxjdWxhdG9y/launch/ica`&lt;br&gt;&lt;br&gt;The name that is in **<strong>bold**</strong> in the above output is used as input parameter to the launch option.</p>
-</td>
-<td style="width: 645px;">
-<p>.\storebrowse.exe&nbsp; -U {Username} &ndash;P {Password} &ndash;D {Domain} &ndash;L &ldquo;{Resource_Name} &lt;https://my.firstexamplestore.net/Citrix/Store/discovery&gt;</p>
-</td>
-<td style="width: 223px;">
-<p>&lt;.\storebrowse.exe&nbsp; &ndash;U {Username} &ndash;P {Password} &ndash;D {Domain} &ndash;L {Resource_Name} https://my.secondexamplestore.com&gt;</p>
-</td>
-</tr>
-<tr>
-<td style="width: 107px;">
-<p>-S, --launch</p>
-</td>
-<td style="width: 402px;">
-<p>You can add the store, enumerate the published resources (apps and desktops) and launch the resource with the single command. This option takes the following as parameters -&nbsp; Username, Password, Domain, Friendly name of the resource to be launched and the store URL. However, if the user does not provide the credentials , AuthManager prompt is thrown to enter the credentials and then the resource launch will happen. &lt;br&gt;&lt;br&gt; You can get the name of the resource of published apps and desktops by executing the command below: &lt;br&gt;&lt;br&gt; `.\storebrowse &ndash;M 0X2000 &ndash;E https://myfirstexamplestore.net/Citrix/Second/discovery ` results in the following output: &lt;br&gt;&lt;br&gt; `'Controller.Calculator'&nbsp; '<strong>Calculator</strong>'&nbsp;&nbsp;&nbsp; '\' ''&nbsp; <a href="http://abc-sf.xyz.com/Citrix/Stress/resources/v2/Q29udHJvbGxlci5DYWxjdWxhdG9y/launch/ica%60">http://abc-sf.xyz.com/Citrix/Stress/resources/v2/Q29udHJvbGxlci5DYWxjdWxhdG9y/launch/ica`</a> &lt;br&gt;&lt;br&gt; The name that is in **<strong>bold**</strong> in the above output will be used as input parameter to the &ldquo;-S&rdquo; option.</p>
-</td>
-<td style="width: 645px;">
-<p>.\storebrowse.exe&nbsp; -U {Username} &ndash;P {Password} &ndash;D {Domain} &ndash;S &ldquo;{Friendly_Resource_Name} &lt;https://my.firstexamplestore.net/Citrix/Store/discovery &gt;</p>
-</td>
-<td style="width: 223px;">
-<p>.\storebrowse.exe&nbsp; &ndash;U {Username} &ndash;P {Password} &ndash;D {Domain} &ndash;S {Friendly_Resource_Name} &lt;https://my.secondexamplestore.com&gt;</p>
-</td>
-</tr>
-<tr>
-<td style="width: 107px;">
-<p>-f, --filefolder</p>
-</td>
-<td style="width: 402px;">
-<p>Generates the required ICA file in the custom path as defined in the &ndash;f option for any of the published apps and desktops using the Storebrowse utility. &lt;br&gt;&lt;br&gt;The launch option requires a folder name along with name of the resource as the input with Store URL, which is either StoreFront server or NetScaler Gateway URL.</p>
-</td>
-<td style="width: 645px;">
-<p>.\storebrowse.exe&nbsp; &ndash;f &ldquo;C:\Temp\Launch.ica&rdquo; &ndash;L &ldquo;Resource_Name&rdquo; {Store}</p>
-</td>
-<td style="width: 223px;">
-<p>.\storebrowse.exe&nbsp; &ndash;f &ldquo;C:\Temp\Launch.ica&rdquo; &ndash;L &ldquo;Resource_Name&rdquo; {NSG_URL}</p>
-</td>
-</tr>
-<tr>
-<td style="width: 107px;">
-<p>-t, --traceauthentication</p>
-</td>
-<td style="width: 402px;">
-<p>Generate logs for Storebrowse in-built AuthManager component. Logs are generated only if Storebrowse is using an in-built AuthManager. Logs are generated in the %localappdata%\Citrix\Storebrowse\logs directory.&lt;br&gt;&lt;br&gt;<br />Note: This option cannot be the last parameter for user&rsquo;s command line.</p>
-</td>
-<td style="width: 645px;">
-<p>.\storebrowse.exe &ndash;t &ndash;U {UserName} &ndash;P {Password} &ndash;D {Domain} &ndash;a {StoreURL}</p>
-</td>
-<td style="width: 223px;">
-<p>.\storebrowse.exe &ndash;t &ndash;U {UserName} &ndash;P {Password} &ndash;D {Domain} &ndash;a {NSG_URL}</p>
-</td>
-</tr>
-<tr>
-<td style="width: 107px;">
-<p>-d, --deletestore</p>
-</td>
-<td style="width: 402px;">
-<p>Deletes existing StoreFront or NetScaler Gateway store.</p>
-</td>
-<td style="width: 645px;">
-<p>.\storebrowse.exe &ndash;d https://my.firstexamplestore.net/Citrix/Store/discovery</p>
-</td>
-<td style="width: 223px;">
-<p>.\storebrowse.exe &ndash;d https://my.secondexmaplestore.com</p>
-</td>
-</tr>
-</tbody>
-</table>
                 
                   
                 
@@ -759,6 +526,27 @@ Note: You must enable HTTP Basic authentication method on the StoreFront while w
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="command-usage/" title="Storebrowse Command Usage" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Storebrowse Command Usage
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

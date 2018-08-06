@@ -4,7 +4,31 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-08-03</lastmod>
+     <lastmod>2018-08-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/command-usage/</loc>
+     <lastmod>2018-08-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/single-sign-on-support/</loc>
+     <lastmod>2018-08-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/known-limitations/</loc>
+     <lastmod>2018-08-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

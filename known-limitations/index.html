@@ -11,20 +11,20 @@
       
       
       
-        <link rel="shortcut icon" href="/assets/images/favicon.png">
+        <link rel="shortcut icon" href="../assets/images/favicon.png">
       
       <meta name="generator" content="mkdocs-0.16.1, mkdocs-material-1.7.1">
     
     
       
-        <title>Storebrowse for Citrix Workspace app for Windows</title>
+        <title>Known Limitations - Storebrowse for Citrix Workspace app for Windows</title>
       
     
     
-      <script src="/assets/javascripts/modernizr-1df76c4e58.js"></script>
+      <script src="../assets/javascripts/modernizr-1df76c4e58.js"></script>
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/application-f98ca285f9.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application-f98ca285f9.css">
       
     
     
@@ -38,7 +38,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
     
     
   </head>
@@ -63,7 +63,7 @@
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
         
-     <a href="" title="Storebrowse for Citrix Workspace app for Windows">
+     <a href=".." title="Storebrowse for Citrix Workspace app for Windows">
            <img src="./img/citrixlogoblack.png" class="citrix-logo" style="width:100px !important">
           </a>
 
@@ -76,7 +76,9 @@
         <span class="md-flex__ellipsis md-header-nav__title">
           
             
-            Storebrowse for Citrix Workspace app for Windows
+              
+            
+            Known Limitations
           
         </span>
       </div>
@@ -145,7 +147,7 @@
 
 
   <li class="md-nav__item">
-    <a href="" title="Home" class="md-nav__link">
+    <a href=".." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -157,7 +159,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/command-usage" title="Storebrowse Command Usage" class="md-nav__link">
+    <a href="../command-usage/" title="Storebrowse Command Usage" class="md-nav__link">
       Storebrowse Command Usage
     </a>
   </li>
@@ -169,7 +171,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/single-sign-on-support" title="Single Sign-on Support of NetScaler Gateway" class="md-nav__link">
+    <a href="../single-sign-on-support/" title="Single Sign-on Support of NetScaler Gateway" class="md-nav__link">
       Single Sign-on Support of NetScaler Gateway
     </a>
   </li>
@@ -179,11 +181,20 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="/known-limitations" title="Known Limitations" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Known Limitations" class="md-nav__link md-nav__link--active">
       Known Limitations
     </a>
+    
   </li>
 
     
@@ -194,12 +205,39 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
-
+                
+                
+                <h1 id="known-limitations-with-current-storebrowse-utility"><a class="toclink" href="#known-limitations-with-current-storebrowse-utility">Known Limitations with Current StoreBrowse Utility</a></h1>
+<ul>
+<li>HTTP Basic Authentication method has to be enabled on the StoreFront server for credential injection operations that you do with StoreBrowse utility.</li>
+<li>If you have HTTP store, and when you try connecting to the store using the utility for enumerating Apps/Desktops or Launch the published Apps/Desktops, then the credential injection via command line option is unsupported. As a workaround, you can use the external AuthManager module which gets triggered when you do not provide credential via command line</li>
+<li>StoreBrowse currently support NetScaler Gateway configured with only single store configured on the StoreFront server.</li>
+<li>Credential Injection in StoreBrowse will work only if NetScaler Gateway is configured with Single Factor Authentication.</li>
+<li>The command line options Username (<code>-U</code>), Password (<code>-P</code>) and Domain (<code>-D</code>) of the Storebrowse utility are case-sensitive and must be in upper case only.</li>
+</ul>
+                
+                  
+                
+              
               
                 
               
@@ -210,6 +248,27 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../single-sign-on-support/" title="Single Sign-on Support of NetScaler Gateway" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Single Sign-on Support of NetScaler Gateway
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -268,10 +327,10 @@
       
     </div>
     
-      <script src="/assets/javascripts/application-e3caa82af6.js"></script>
+      <script src="../assets/javascripts/application-e3caa82af6.js"></script>
       
       
-      <script>app.initialize({url:{base:""}})</script>
+      <script>app.initialize({url:{base:".."}})</script>
       
     
     
