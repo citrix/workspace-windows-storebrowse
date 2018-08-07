@@ -67,7 +67,7 @@ Citrix Workspace app Version 18.8 requires a minimum of 530MB of free disk space
 
 Storebrowse utility is compatible with the following Operating systems:
 
-<table style="width:100%">
+<table style="width:130%">
   <tr>
     <th>Operating System</th>
   </tr>
