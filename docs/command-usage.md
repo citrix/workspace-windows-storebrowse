@@ -125,7 +125,7 @@ The name that is in **bold** in the above output is used as input parameter to t
 <.\storebrowse.exe  –U {Username} –P {Password} –D {Domain} –L {Resource_Name} https://my.secondexamplestore.com>
 ```
 
-## `-S`, `--launch`
+## `-S`, `--sessionlaunch`
 
 **Description**
 
