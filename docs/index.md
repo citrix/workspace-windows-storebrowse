@@ -1,6 +1,8 @@
-# Storebrowse for Workspace app for Windows
+# Storebrowse Utility for Workspace app for Windows
 
 Storebrowse is a lightweight command-line utility that is used to interact between the client and the server. It is used to authenticate all the operations within StoreFront and with NetScaler Gateway.
+
+For documentation on older versions of the Storebrowse Utility for Citrix Receiver for Windows, click [here](https://developer-docs.citrix.com/projects/storebrowse-for-receiver-for-windows/en/latest/).
 
 Using Storebrowse utility, administrators can automate the following day-to-day operations:
 
