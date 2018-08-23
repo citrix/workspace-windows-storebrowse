@@ -1,4 +1,4 @@
-# Storebrowse Utility for Workspace app for Windows 1808
+# Storebrowse Utility for Workspace app 1808 for Windows 
 
 Storebrowse is a lightweight command-line utility that is used to interact between the client and the server. It is used to authenticate all the operations within StoreFront and with NetScaler Gateway.
 
